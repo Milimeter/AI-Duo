@@ -1,5 +1,6 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
-import 'package:freckled_zelda/constants/font_family.dart';
 import 'package:freckled_zelda/utils/colors.dart';
 import 'package:freckled_zelda/utils/sizes.dart';
 
@@ -43,7 +44,7 @@ class CText extends StatelessWidget {
               style: TextStyle(
                 fontSize: fontSize(size ?? 26),
                 fontWeight: fontWeight ?? FontWeight.w400,
-                fontFamily: fontFamily ?? CFontFamily.DongleLight,
+                fontFamily: fontFamily ?? CFONT.LIGHT,
                 color: color ?? kWhiteColor.withOpacity(0.8), //Colors.grey
                 wordSpacing: wordSpacing,
                 letterSpacing: letterSpacing ?? 0,
@@ -60,7 +61,7 @@ class CText extends StatelessWidget {
                 style: TextStyle(
                   fontSize: fontSize(size ?? 26),
                   fontWeight: fontWeight ?? FontWeight.w400,
-                  fontFamily: fontFamily ?? CFontFamily.DongleLight,
+                  fontFamily: fontFamily ?? CFONT.LIGHT,
                   color: color ?? kWhiteColor.withOpacity(0.8), //Colors.grey
                   wordSpacing: wordSpacing,
                   letterSpacing: letterSpacing ?? 0,
@@ -71,4 +72,10 @@ class CText extends StatelessWidget {
             ),
     );
   }
+}
+
+class CFONT {
+  static const String BOLD = "Dongle-Bold";
+  static const String REGULAR = "Dongle-Regular";
+  static const String LIGHT = "Dongle-Light";
 }

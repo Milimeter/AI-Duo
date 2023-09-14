@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:freckled_zelda/constants/font_family.dart';
+import 'package:freckled_zelda/routes/app_pages.dart';
 import 'package:freckled_zelda/screens/auth/controller/auth_controller.dart';
 import 'package:freckled_zelda/services/extensions.dart';
 import 'package:freckled_zelda/shared/action_button.dart';
@@ -39,9 +39,9 @@ class _SignupScreenState extends State<SignupScreen> {
                   children: [
                     const Align(
                       child: CText(
-                        text: "FRECKLED ZELDA",
+                        text: "AI-Duo",
                         size: 50,
-                        fontFamily: CFontFamily.DongleBold,
+                        fontFamily: CFONT.BOLD,
                       ),
                     ),
                     const Spacer(),
@@ -160,7 +160,9 @@ class _SignupScreenState extends State<SignupScreen> {
                 SizedBox(height: heightSize(100)),
                 ActionButton(
                   text: "Get Started",
-                  callback: () {},
+                  callback: () {
+                    Get.toNamed(Routes.MAIN_APP);
+                  },
                 ),
               ],
             );

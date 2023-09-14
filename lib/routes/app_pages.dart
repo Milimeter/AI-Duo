@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:freckled_zelda/screens/app/binding/app_binding.dart';
+import 'package:freckled_zelda/screens/app/view/main_app.dart';
 import 'package:freckled_zelda/screens/auth/binding/auth_binding.dart';
 import 'package:freckled_zelda/screens/auth/view/auth_intro.dart';
 import 'package:freckled_zelda/screens/auth/view/pages/login.dart';
@@ -25,17 +27,24 @@ class AppPages {
       transitionDuration: const Duration(milliseconds: 500),
       binding: AuthBinding(),
     ),
-     GetPage(
+    GetPage(
       name: Routes.LOGIN_SCREEN,
       page: () => const LoginScreen(),
       transition: Transition.rightToLeftWithFade,
       transitionDuration: const Duration(milliseconds: 500),
     ),
-     GetPage(
+    GetPage(
       name: Routes.SIGNUP_SCREEN,
       page: () => const SignupScreen(),
       transition: Transition.rightToLeftWithFade,
       transitionDuration: const Duration(milliseconds: 500),
+    ),
+    GetPage(
+      name: Routes.MAIN_APP,
+      page: () => const MainApp(),
+      transition: Transition.rightToLeftWithFade,
+      transitionDuration: const Duration(milliseconds: 500),
+      binding: AppBinding(),
     ),
   ];
 }

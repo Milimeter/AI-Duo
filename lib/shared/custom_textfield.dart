@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:freckled_zelda/constants/font_family.dart';
 import 'package:freckled_zelda/constants/value.dart';
+import 'package:freckled_zelda/shared/custom_text.dart';
 import 'package:freckled_zelda/utils/colors.dart';
 import 'package:freckled_zelda/utils/sizes.dart';
 
@@ -75,7 +75,7 @@ class AuthTextField extends StatelessWidget {
             style: TextStyle(
               color: kWhiteColor,
               fontSize: fontSize(28),
-              fontFamily: CFontFamily.DongleBold,
+              fontFamily: CFONT.BOLD,
             ),
 
             decoration: InputDecoration(
@@ -99,7 +99,7 @@ class AuthTextField extends StatelessWidget {
               hintStyle: TextStyle(
                 color: hintColor ?? kWhiteColor.withOpacity(0.4),
                 fontSize: fontSize(28),
-                fontFamily: CFontFamily.DongleBold,
+                fontFamily: CFONT.BOLD,
               ),
 
               // hintStyle: GoogleFonts.sansita(

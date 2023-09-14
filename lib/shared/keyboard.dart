@@ -1,11 +1,6 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:freckled_zelda/constants/font_family.dart';
 import 'package:freckled_zelda/shared/custom_text.dart';
 import 'package:freckled_zelda/utils/sizes.dart';
-
-
 
 typedef KeyboardTapCallback = void Function(String text);
 
@@ -139,7 +134,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
             text: value,
             size: 26,
             fontWeight: FontWeight.w400,
-            fontFamily: CFontFamily.DongleRegular,
+            fontFamily: CFONT.REGULAR,
             color: widget.textColor,
           ),
         ));

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:freckled_zelda/constants/font_family.dart';
 import 'package:freckled_zelda/routes/app_pages.dart';
+import 'package:freckled_zelda/shared/custom_text.dart';
 import 'package:freckled_zelda/utils/colors.dart';
 import 'package:freckled_zelda/utils/size-config.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,7 +39,7 @@ class InitClass extends StatelessWidget {
         getPages: AppPages.routes,
         theme: ThemeData(
             useMaterial3: true,
-            fontFamily: CFontFamily.DongleBold,
+            fontFamily: CFONT.BOLD,
             brightness: Brightness.dark,
             scaffoldBackgroundColor: kBackgroundColor,
             dividerColor: kBackgroundColor,

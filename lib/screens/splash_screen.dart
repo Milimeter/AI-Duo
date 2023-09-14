@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:freckled_zelda/constants/font_family.dart';
 import 'package:freckled_zelda/constants/steps.dart';
 import 'package:freckled_zelda/routes/app_pages.dart';
 import 'package:freckled_zelda/services/storage.dart';
@@ -62,15 +61,15 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18.0),
           child: LayoutBuilder(builder: (context, constraints) {
-            return Column(
+            return const Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Align(
                   child: CText(
-                    text: "FRECKLED ZELDA",
+                    text: "AI-Duo",
                     size: 50,
-                    fontFamily: CFontFamily.DongleBold,
+                    fontFamily: CFONT.BOLD,
                   ),
                 ),
               ],

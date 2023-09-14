@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:freckled_zelda/constants/font_family.dart';
 import 'package:freckled_zelda/constants/value.dart';
 import 'package:freckled_zelda/routes/app_pages.dart';
 import 'package:freckled_zelda/shared/action_button.dart';
@@ -11,9 +10,10 @@ import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
 class AuthIntroSignUpDialog extends StatelessWidget {
- final VideoPlayerController controller;
+  final VideoPlayerController controller;
   final bool toSignup;
-  const AuthIntroSignUpDialog({super.key, required this.toSignup, required this.controller});
+  const AuthIntroSignUpDialog(
+      {super.key, required this.toSignup, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -50,12 +50,12 @@ class AuthIntroSignUpDialog extends StatelessWidget {
               CText(
                 text: "Select Sign ${toSignup ? 'Up' : 'In'} Option...",
                 size: 30,
-                fontFamily: CFontFamily.DongleBold,
+                fontFamily: CFONT.BOLD,
               ),
               SizedBox(height: heightSize(30)),
               ActionButton(
-                text: "Sign ${toSignup ? 'Up' : 'In'} with Facebook",
-                color: const Color(0xFF3b5998),
+                text: "Sign ${toSignup ? 'Up' : 'In'} with Google",
+                color: const Color(0xFF4285F4),
                 callback: () {},
               ),
               SizedBox(height: heightSize(20)),
@@ -63,7 +63,7 @@ class AuthIntroSignUpDialog extends StatelessWidget {
                 text: "Sign ${toSignup ? 'Up' : 'In'} with Email",
                 fontWeight: FontWeight.w500,
                 size: 28,
-                fontFamily: CFontFamily.DongleBold,
+                fontFamily: CFONT.BOLD,
                 onClick: () {
                   controller.setVolume(0.0);
                   if (toSignup) {

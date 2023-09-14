@@ -2,7 +2,7 @@
     package="com.example.freckled_zelda">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="freckled_zelda"
+        android:label="AI-Duo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

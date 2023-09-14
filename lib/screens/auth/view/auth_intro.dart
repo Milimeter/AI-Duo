@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:freckled_zelda/constants/assets_path.dart';
-import 'package:freckled_zelda/constants/font_family.dart';
+import 'package:freckled_zelda/constants/value.dart';
 import 'package:freckled_zelda/screens/auth/view/components/intro_auth_dialog.dart';
 import 'package:freckled_zelda/shared/action_button.dart';
 import 'package:freckled_zelda/shared/custom_text.dart';
@@ -29,11 +30,7 @@ class _AuthIntroState extends State<AuthIntro> {
     _controller = VideoPlayerController.asset(intro);
     _controller.initialize().then((_) {
       _controller.setLooping(true);
-      if (_controller.value.volume == 0.0) {
-        isMuted = true;
-      }
-
-      setState(() {});
+      _controller.setVolume(0.0);
       Timer(const Duration(milliseconds: 100), () {
         setState(() {
           _controller.play();
@@ -43,26 +40,28 @@ class _AuthIntroState extends State<AuthIntro> {
     });
   }
 
-  checkController() {
-    log("checking here");
-    double volume = _controller.value.volume;
-    if (volume == 0.0) {
-      setState(() {
-        isMuted = true;
-      });
-    }
-  }
-
   @override
   void dispose() {
-    _controller.pause();
+    // _controller.pause();
     _controller.dispose();
     super.dispose();
   }
 
+  int currentIndex = 0;
+  List<String> textList = [
+    'Create stunning ART with AI Duo',
+    'Create face swaps with AI Duo',
+    'AI personal assistant with AI Duo',
+    'Generate text with Human like fluency',
+    'Transform your selfies with AI Duo',
+    'Create realistic images with AI Duo',
+    'Choose from 100+ style ',
+    'Create anime art with AI Duo',
+    'Discover trendy styles'
+  ];
+
   @override
   Widget build(BuildContext context) {
-    checkController();
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: SafeArea(
@@ -92,31 +91,64 @@ class _AuthIntroState extends State<AuthIntro> {
                     SizedBox(height: constraints.maxHeight * 0.03),
                     const Align(
                       child: CText(
-                        text: "FRECKLED ZELDA",
+                        text: "AI-DUO",
                         size: 50,
-                        fontFamily: CFontFamily.DongleBold,
+                        fontFamily: CFONT.BOLD,
                       ),
                     ),
                     const Spacer(),
-                    GestureDetector(
-                      onTap: () {
-                        isMuted = !isMuted;
-                        if (isMuted) {
-                          _controller.setVolume(0.0);
-                        } else {
-                          _controller.setVolume(1.0);
-                        }
-                        setState(() {});
-                      },
-                      child: CircleAvatar(
-                        radius: 25,
-                        backgroundColor: kGreyColor.withOpacity(0.2),
-                        child: Icon(
-                          isMuted || _controller.value.volume == 0.0
-                              ? Octicons.mute
-                              : Octicons.unmute,
-                          color: kWhiteColor,
-                        ),
+                    Container(
+                      height: heightSize(50),
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(horizontal: 18),
+                      decoration: BoxDecoration(
+                        color: kGreyColor.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(Values().boxRadius),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(Octicons.hubot, color: kWhiteColor),
+                          SizedBox(width: widthSize(5)),
+                          Expanded(
+                            child: CarouselSlider(
+                              options: CarouselOptions(
+                                // height: 40,
+                                aspectRatio: 16 / 9,
+                                viewportFraction: 1,
+                                initialPage: 0,
+                                enableInfiniteScroll: true,
+                                reverse: false,
+                                autoPlay: true,
+                                autoPlayInterval: const Duration(seconds: 3),
+                                autoPlayAnimationDuration:
+                                    const Duration(milliseconds: 800),
+                                autoPlayCurve: Curves.fastOutSlowIn,
+                                onPageChanged: (index, reason) {
+                                  setState(() {
+                                    currentIndex = index;
+                                  });
+                                },
+                              ),
+                              items: textList
+                                  .map((item) => Builder(
+                                        builder: (BuildContext context) {
+                                          return Padding(
+                                            padding:
+                                                const EdgeInsets.only(top: 5.0),
+                                            child: Center(
+                                              child: CText(
+                                                text: item,
+                                                color: kWhiteColor,
+                                                fontFamily: CFONT.BOLD,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ))
+                                  .toList(),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(height: heightSize(20)),
