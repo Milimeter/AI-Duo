@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:freckled_zelda/shared/custom_text.dart';
-import 'package:freckled_zelda/utils/sizes.dart';
+import 'package:ai_duo/shared/custom_text.dart';
+import 'package:ai_duo/utils/sizes.dart';
 
 typedef KeyboardTapCallback = void Function(String text);
 

@@ -1,8 +1,8 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:freckled_zelda/utils/colors.dart';
-import 'package:freckled_zelda/utils/sizes.dart';
+import 'package:ai_duo/utils/colors.dart';
+import 'package:ai_duo/utils/sizes.dart';
 
 class CText extends StatelessWidget {
   final String text;
@@ -42,10 +42,10 @@ class CText extends StatelessWidget {
               textAlign: textAlign ?? TextAlign.start,
               overflow: allowOverflow == false ? null : TextOverflow.ellipsis,
               style: TextStyle(
-                fontSize: fontSize(size ?? 26),
+                fontSize: fontSize(size ?? 16),
                 fontWeight: fontWeight ?? FontWeight.w400,
-                fontFamily: fontFamily ?? CFONT.LIGHT,
-                color: color ?? kWhiteColor.withOpacity(0.8), //Colors.grey
+                fontFamily: fontFamily ?? CFONT.REGULAR,
+                color: color ?? kTextTitleColor, //Colors.grey
                 wordSpacing: wordSpacing,
                 letterSpacing: letterSpacing ?? 0,
                 height: height ?? 1,
@@ -59,10 +59,10 @@ class CText extends StatelessWidget {
                 textAlign: textAlign ?? TextAlign.start,
                 overflow: allowOverflow == false ? null : TextOverflow.ellipsis,
                 style: TextStyle(
-                  fontSize: fontSize(size ?? 26),
+                  fontSize: fontSize(size ?? 16),
                   fontWeight: fontWeight ?? FontWeight.w400,
-                  fontFamily: fontFamily ?? CFONT.LIGHT,
-                  color: color ?? kWhiteColor.withOpacity(0.8), //Colors.grey
+                  fontFamily: fontFamily ?? CFONT.REGULAR,
+                  color: color ?? kTextTitleColor, //Colors.grey
                   wordSpacing: wordSpacing,
                   letterSpacing: letterSpacing ?? 0,
                   height: height ?? 1,
@@ -71,11 +71,13 @@ class CText extends StatelessWidget {
               ),
             ),
     );
+ 
   }
 }
 
 class CFONT {
-  static const String BOLD = "Dongle-Bold";
-  static const String REGULAR = "Dongle-Regular";
-  static const String LIGHT = "Dongle-Light";
+  static const SEMIBOLD = "BRFirma-SemiBold";
+  static const BOLD = "BRFirma-Bold";
+  static const MEDIUM = "BRFirma-Medium";
+  static const REGULAR = "BRFirma-Regular";
 }

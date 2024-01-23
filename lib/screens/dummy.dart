@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:freckled_zelda/utils/colors.dart';
+import 'package:ai_duo/utils/colors.dart';
 
 class Dummy extends StatefulWidget {
   const Dummy({super.key});

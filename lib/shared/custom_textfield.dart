@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:freckled_zelda/constants/value.dart';
-import 'package:freckled_zelda/shared/custom_text.dart';
-import 'package:freckled_zelda/utils/colors.dart';
-import 'package:freckled_zelda/utils/sizes.dart';
+import 'package:ai_duo/constants/value.dart';
+import 'package:ai_duo/shared/custom_text.dart';
+import 'package:ai_duo/utils/colors.dart';
+import 'package:ai_duo/utils/sizes.dart';
 
 class AuthTextField extends StatelessWidget {
   //final Function(String) validator;
@@ -111,6 +111,7 @@ class AuthTextField extends StatelessWidget {
               focusedBorder: InputBorder.none,
               errorBorder: InputBorder.none,
             ),
+          
           ),
         ),
       ),
@@ -118,99 +119,3 @@ class AuthTextField extends StatelessWidget {
   }
 }
 
-class CustomTextField extends StatelessWidget {
-  //final Function(String) validator;
-  final TextEditingController controller;
-  final TextInputType inputType;
-  final String hint;
-  final String error;
-  final String Function(String?) validFunction;
-  final Function(String)? onSavedFunction;
-  final Function(String)? onSubmitFunction;
-  final Color? color;
-  final Color? hintColor;
-  final Color? fillColor;
-  final bool? enabled;
-  final double? height;
-  final Icon? prefixIcon;
-  final bool? obscureText;
-  const CustomTextField({
-    Key? key,
-    required this.hint,
-    required this.controller,
-    required this.inputType,
-    required this.error,
-    required this.validFunction,
-    this.onSavedFunction,
-    this.color,
-    this.onSubmitFunction,
-    this.enabled = true,
-    this.height,
-    this.hintColor,
-    this.obscureText,
-    this.fillColor,
-    this.prefixIcon,
-    //required this.validator,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      enabled: enabled,
-      controller: controller,
-      validator: validFunction,
-      onChanged: onSavedFunction,
-      onFieldSubmitted: onSubmitFunction,
-      keyboardType: inputType,
-      showCursor: true,
-      cursorColor: kPrimaryColor,
-      obscureText: obscureText ?? false,
-      //validator: validator,
-      style: TextStyle(
-        color: kTextTitleColor,
-        fontSize: fontSize(15),
-      ),
-      decoration: InputDecoration(
-        fillColor: fillColor ?? Colors.transparent,
-        filled: true,
-        prefixIcon: prefixIcon,
-
-        // labelText: hint,
-        // labelStyle: const TextStyle(color: kTextSubtitleColor),
-        hintText: hint,
-        hintStyle: TextStyle(
-          color: hintColor ?? kTextSubtitleColor,
-          fontSize: fontSize(15),
-        ),
-
-        // hintStyle: GoogleFonts.sansita(
-        //   color: kWhite,
-        // ),
-
-        border: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: kGreyColor.withOpacity(0.5),
-          ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(Values().boxRadius),
-          borderSide: const BorderSide(
-            color: Colors.transparent,
-          ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(Values().boxRadius),
-          borderSide: const BorderSide(
-            color: kPrimaryColor,
-          ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(Values().boxRadius),
-          borderSide: const BorderSide(
-            color: Colors.transparent,
-          ),
-        ),
-      ),
-    );
-  }
-}

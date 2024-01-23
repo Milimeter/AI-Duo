@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:freckled_zelda/constants/steps.dart';
-import 'package:freckled_zelda/routes/app_pages.dart';
-import 'package:freckled_zelda/services/storage.dart';
-import 'package:freckled_zelda/utils/colors.dart';
+import 'package:ai_duo/constants/steps.dart';
+import 'package:ai_duo/routes/app_pages.dart';
+import 'package:ai_duo/services/storage.dart';
+import 'package:ai_duo/utils/colors.dart';
 import 'package:get/get.dart';
 
 import '../shared/custom_text.dart';
@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
       case Steps.AUTH:
         Timer(const Duration(seconds: 4), () {
           Get.toNamed(
-            Routes.LOGIN_SCREEN,
+            Routes.ADD_WALLET,
           );
         });
         break;

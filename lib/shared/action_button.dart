@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:freckled_zelda/constants/value.dart';
-import 'package:freckled_zelda/shared/custom_text.dart';
-import 'package:freckled_zelda/utils/colors.dart';
-import 'package:freckled_zelda/utils/sizes.dart';
+import 'package:ai_duo/constants/value.dart';
+import 'package:ai_duo/shared/custom_text.dart';
+import 'package:ai_duo/utils/colors.dart';
+import 'package:ai_duo/utils/sizes.dart';
 
 class ActionButton extends StatelessWidget {
   final String text;
@@ -46,7 +46,7 @@ class ActionButton extends StatelessWidget {
                   child: CText(
                     text: text,
                     fontWeight: fontWeight ?? FontWeight.w500,
-                    size: 28,
+                    size: 20,
                     color: textColor ?? kWhiteColor,
                     fontFamily: CFONT.BOLD,
                     // letterSpacing: 2,

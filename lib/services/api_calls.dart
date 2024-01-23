@@ -1,6 +1,6 @@
 
 
-import 'package:freckled_zelda/services/api_service.dart';
+import 'package:ai_duo/services/api_service.dart';
 
 
 class APICalls {

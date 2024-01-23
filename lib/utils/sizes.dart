@@ -4,7 +4,7 @@
 
 
 
-import 'package:freckled_zelda/utils/size-config.dart';
+import 'package:ai_duo/utils/size-config.dart';
 
 double widthSize(double value) {
   double size = value / 4.14;
